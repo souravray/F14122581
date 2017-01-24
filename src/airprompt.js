@@ -7,3 +7,9 @@ var program = require('commander');
 // var list = require('./lib/list');
 // var reader = require('./lib/details');
 // var reader = require('./lib/message');
+
+program
+	.command('hello')
+	.action(function(options){
+		console.log("hey!")
+	});
