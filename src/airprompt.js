@@ -17,3 +17,10 @@ program
 	.action(function(options){
 		console.log("hey!")
 	});
+
+program.parse(process.argv);
+
+if (!process.argv.slice(2).length) {
+	// Show help by default
+	program.outputHelp();
+}
