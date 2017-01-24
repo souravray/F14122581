@@ -9,6 +9,10 @@ var program = require('commander');
 // var reader = require('./lib/message');
 
 program
+	.version('alpha.0.1')
+	.description('cli for teams');
+
+program
 	.command('hello')
 	.action(function(options){
 		console.log("hey!")
