@@ -2,7 +2,7 @@
   "name": "AirPrompt",
   "version": "0.0.1",
   "description": "CLI for team",
-  "main": "./lib/airprompt.js",
+  "main": "./src/airprompt.js",
   "author": {
     "name": "Sourav Ray",
     "email": "me@raysourv.com"
@@ -27,6 +27,6 @@
   },
   "preferGlobal": true,
   "bin": {
-    "airprompt": "./lib/airprompt.js"
+    "airprompt": "./src/airprompt.js"
   }
 }
