@@ -1,0 +1,29 @@
+{
+  "name": "AirPrompt",
+  "version": "0.0.1",
+  "description": "CLI for team",
+  "main": "./lib/airprompt.js",
+  "author": {
+    "name": "Sourav Ray",
+    "email": "me@raysourv.com"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "cli",
+    "AirPrompt",
+    "shell",
+    "team",
+    "autocompletion",
+    "notifications"
+  ],
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "commander": "^2.0.0",
+    "inquirer": "^3.0.0",
+    "chalk": "^1.1.0"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "airprompt": "./lib/airprompt.js"
+  }
+}
