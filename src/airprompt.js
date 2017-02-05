@@ -4,7 +4,7 @@
 var program = require('commander');
 //var cliMd = require("mdy");
 
-// var list = require('./lib/list');
+var list = require('./libs/list');
 // var reader = require('./lib/details');
 // var reader = require('./lib/message');
 
@@ -15,8 +15,15 @@ program
 program
 	.command('hello')
 	.action(function(options){
-		console.log("hey!")
+		list('author', {});
 	});
+
+program
+	.command('hi')
+	.action(function(options){
+		list('author', {});
+	});
+
 
 program.parse(process.argv);
 
