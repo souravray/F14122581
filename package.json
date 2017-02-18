@@ -11,6 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/souravray/F14122581.git"
   },
+  "license": "LicenseRef-LICENSE",
+  "private": true,
   "keywords": [
     "cli",
     "AirPrompt",
