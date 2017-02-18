@@ -139,17 +139,18 @@ Prompt.prototype.render = function () {
 
   // Render choices or answer depending on the state
   if (this.status === 'answered') {
-    message += chalk.cyan(this.opt.choices.getChoice(this.selected).short);
+    message = chalk.green("    Opening ...");
+  } else if (this.status === 'terminated') {
+    message = chalk.red("    Exiting ...")
   } else {
     var choicesStr = listRender(this.formator, this.opt.choices, this.selected);
     var indexPosition = this.opt.choices.indexOf(this.opt.choices.getChoice(this.selected));
     message += '\n' + this.paginator.paginate(choicesStr, indexPosition, this.opt.pageSize);
+    message += "\n\n  "+chalk.bgCyan.bold(" ↑ ") +" / " +chalk.bgCyan.bold(" ↓ ") +" Scroll \t" +chalk.bgCyan.bold(" C ") +" Quick Copy \t" + chalk.bgCyan.bold(" Enter ")+ " Expand \t" + chalk.bgRed.bold(" Esc ") + " Abort"
   }
 
   // message = message.replace(/\(Move up and down to reveal more choices\)/,"")
 
-  message += "\n\n  "+chalk.bgCyan.bold(" ↑ ") +" / " +chalk.bgCyan.bold(" ↓ ") +" Scroll \t" +chalk.bgCyan.bold(" C ") +" Quick Copy \t" + chalk.bgCyan.bold(" Enter ")+ " Expand \t" + chalk.bgRed.bold(" Esc ") + " Abort"
- 
   this.firstRender = false;
 
   this.screen.render(message);
@@ -212,7 +213,7 @@ Prompt.prototype.onCopy = function (value) {
 
 
 Prompt.prototype.onEsc = function (value) {
-  this.status = 'answered';
+  this.status = 'terminated';
 
   // Rerender prompt
   this.render();
